@@ -418,21 +418,6 @@ public class AwShellActivity extends Activity implements OnRequestPermissionsRes
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // If the device is not supported, show an alert and quit.
-        if (!SupportedDevices.isSupported(this)) 
-        {
-            createAlertDialog(AwShellActivity.this, "ERROR", "This device is not currently supported by WebARonARCore.", new DialogInterface.OnClickListener()
-                {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which)
-                    {
-                        finish();
-                    }
-                }, 1, "Ok", null, null).show();
-            return;
-        }
-
         requestPermissions();
         // requestADFPermission();
 
